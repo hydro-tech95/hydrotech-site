@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hydrotech Engineering Solutions</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
+    header { background: linear-gradient(90deg, #a8c1db, #0182f3); color: rgb(252, 254, 254); padding: 1rem 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; }
+    section { padding: 2rem; text-align: center; scroll-margin-top: 100px; }
+    .btn { background: #007bff; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 5px; display: inline-block; }
+    footer { background: #eee; padding: 1rem; text-align: center; }
+    form { display: flex; flex-direction: column; max-width: 400px; margin: 0 auto; }
+    input, textarea { margin-bottom: 1rem; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+    button { background: #003366; color: white; padding: 0.7rem; border: none; border-radius: 4px; cursor: pointer; }
+    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 999; }
+    .whatsapp-float img { width: 60px; height: 60px; }
+    iframe { width: 100%; max-width: 600px; height: 300px; border: none; margin-top: 2rem; }
+    .slider-container { max-width: 600px; margin: auto; position: relative; overflow: hidden; }
+    .slider-track { display: flex; transition: transform 0.5s ease-in-out; }
+    .product-card { flex: 0 0 100%; box-sizing: border-box; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+    .product-card img { width: 100%; max-width: 500px; border-radius: 8px; margin: 10px 0; }
+    .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: #003366; color: white; border: none; padding: 0.5rem 1rem; cursor: pointer; border-radius: 5px; }
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
+    .nav-link {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #FFEB3B;
+    }
+    ::selection {
+      background: #FFEB3B;
+      color: #003366;
+    }
+    .two-column-products {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .product-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .product-left, .product-right {
+      flex: 1 1 45%;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 768px) {
+      .product-left, .product-right {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header data-aos="fade-down">
+  <div style="display: flex; align-items: center; gap: 1rem;">
+    <img src="LOGO.png" alt="Hydrotech Logo" style="height: 60px; border-radius: 8px;">
+    <h1 style="font-family: 'Castellar', sans-serif; font-size: 2rem; margin: 0;">Hydrotech Engineering Solutions</h1>
+  </div>
+  <nav>
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#products" class="nav-link">Products</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+</header>
+
+<section id="home" data-aos="fade-up" style="padding: 20px 0;">
+  <div class="slider-container">
+    <!-- Overlay Text -->
+    <div class="slider-text">
+      <!-- In the <head> section: include Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+<!-- In the <style> tag or external CSS -->
+<style>
+  .main-heading {
+    font-size: 32px;
+    font-family: 'Times New Roman',sans-serif;
+    font-weight: 100;
+    color: #edf1f2;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+</style>
+
+<!-- In the body -->
+<h1 class="main-heading">HYDROTECH ENGINEERING SOLUTIONS</h1>
+
+      <h2>Your Trusted Partner in Piping Solutions</h2>
+      <a href="#products" class="btn">Explore Products</a>
+    </div>
+
+    <!-- Slideshow Images -->
+    <div id="bannerSlider" class="slider">
+      <img src="banner1.jpg" alt="Banner 1" class="slide">
+      <img src="banner2.jpg" alt="Banner 2" class="slide">
+      <img src="banner3.jpg" alt="Banner 3" class="slide">
+      <img src="banner4.jpg" alt="Banner 4" class="slide">
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  .slider-container {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation: slideShow 16s infinite;
+  }
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .slider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    padding: 20px;
+  }
+
+  .slider-text h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .slider-text p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  @keyframes slideShow {
+    0%    { transform: translateX(0); }
+    25%   { transform: translateX(-100%); }
+    50%   { transform: translateX(-200%); }
+    75%   { transform: translateX(-300%); }
+    100%  { transform: translateX(0); }
+  }
+</style>
+
+<section id="about" data-aos="fade-up">
+  <h2 style="text-align: center;">About Hydrotech Engineering Solutions</h2>
+  <p style="text-align: center;">Hydrotech Engineering Solutions specializes in providing high-quality piping systems and related components to support both large and small-scale projects. Our products are sourced from leading manufacturers, ensuring that they meet the highest standards of durability, performance, and compliance with international specifications. We are dedicated to offering our clients the best in terms of both product quality and service.</p>
+  <p style="text-align: center;">With years of experience in the industry, Hydrotech Engineering Solutions serves a wide range of sectors including water supply, sewage, construction, agriculture, and industrial infrastructure. Our team of experts understands the technical requirements of each sector, allowing us to recommend the most suitable piping solutions tailored to our clients' specific needs.</p>
+  <p style="text-align: center;">We believe in continuous improvement and innovation. By staying updated with the latest advancements in materials and manufacturing technologies, we ensure that our offerings remain efficient, sustainable, and cost-effective. Our commitment to quality drives us to rigorously test every product before it reaches our customers.</p>
+  <p style="text-align: center;">At Hydrotech Engineering Solutions, customer satisfaction is at the core of everything we do. From the initial consultation to post-installation support, we strive to build long-lasting relationships with our clients. Our responsive customer service team ensures prompt communication, expert guidance, and timely delivery for every order.</p>
+</section>
+
+<section id="product-details" data-aos="fade-up">
+  <h1 style="text-align: center;">Product Details</h1>
+  <div class="two-column-products">
+<div class="product-row">
+      <div class="product-left">
+        <h3>Ductile Iron (DI) Pipes and Fittings</h3>
+        <p>Our DI pipes and fittings are highly durable and suitable for a wide range of applications, including water distribution systems, sewerage systems, and industrial pipelines. These products are designed to withstand high pressures and harsh environmental conditions.</p>
+      </div>
+      <div class="product-right">
+        <h3>UPVC Pipes and Fittings</h3>
+        <p>Our UPVC pipes are known for their superior resistance to corrosion and chemicals, making them ideal for potable water systems, sewage systems, and other industrial uses. They are lightweight, cost-effective, and easy to install.</p>
+      </div>
+    </div>
+    <div class="product-row">
+      <div class="product-left">
+        <h3>HDPE Pipes and Fittings</h3>
+        <p>We offer HDPE pipes, which are highly resistant to chemicals, corrosion, and abrasion. These pipes are perfect for use in water supply systems, agricultural irrigation, and industrial applications. Their flexibility and high tensile strength make them ideal for challenging environments.</p>
+      </div>
+      <div class="product-right">
+        <h3>Cast Iron (CI) Pipes and Fittings</h3>
+        <p>Our CI pipes and fittings are built to last and offer excellent strength and corrosion resistance. These products are commonly used in water distribution, sewerage, and industrial applications.</p>
+      </div>
+    </div>
+    <div class="product-row">
+      <div class="product-left">
+        <h3>CI and DI Valves</h3>
+        <p>We supply a range of CI and DI valves that offer long-lasting performance in controlling the flow of liquids and gases. These valves are essential for maintaining optimal flow in pipelines, with the added benefits of reliability and ease of maintenance.</p>
+      </div>
+      <div class="product-right">
+        <h3>CI and DI Manhole Covers and Frames</h3>
+        <p>Our manhole covers and frames are available in both CI (Cast Iron) and DI (Ductile Iron). These products are designed to provide robust and secure access to underground utilities, ensuring safety and durability in roadways, industrial facilities, and infrastructure projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.two-column-products {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.product-left, .product-right {
+  flex: 1 1 45%;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .product-left, .product-right {
+    flex: 1 1 100%;
+  }
+}
+</style>
+
+<section id="products">
+  <h2 data-aos="fade-right">Our Products</h2>
+  <div class="slider-container" data-aos="zoom-in">
+    <div class="slider-track" id="slider">
+<div class="product-card">
+          <h3>DI Pipes and Fittings</h3>
+          <img src="DI_pipe.png" alt="DI Pipes">
+        </div>
+        <div class="product-card">
+          <h3>UPVC Pipes and Fittings</h3>
+          <img src="upvc.jpg" alt="UPVC Pipes">
+        </div>
+        <div class="product-card">
+          <h3>HDPE Pipes and Fittings</h3>
+          <img src="HDPE.jpg" alt="HDPE Pipes">
+        </div>
+        <div class="product-card">
+          <h3>CI Pipes and Fittings</h3>
+          <img src="ci pipe.jpg" alt="CI Pipes">
+        </div>
+        <div class="product-card">
+          <h3>CI and DI Manhole Covers and Frames</h3>
+          <img src="ci_di_manhole.jpg" alt="Manhole Covers">
+        </div>
+    </div>
+    <button class="slider-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="slider-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+</section>
+
+ <section id="why-choose" data-aos="fade-up">
+  <h1 style="text-align: center;">Why Choose Hydrotech Engineering Solutions?</h1>
+  <div class="two-column-products">
+    <div class="product-row">
+      <div class="product-left">
+        <h3>Experience & Expertise</h3>
+        <p>With over 5 years of hands-on experience in the industry, we possess the knowledge and expertise required to deliver top-quality products and services to our clients. Our team is well-equipped to assist with product selection, system design, and project execution.</p>
+      </div>
+      <div class="product-right">
+        <h3>Wide Network & Client Base</h3>
+        <p>We have strong relationships with major contractors, construction companies, and infrastructure developers across Kerala. Our commitment to quality has made us a preferred supplier.</p>
+      </div>
+    </div>
+    <div class="product-row">
+      <div class="product-left">
+        <h3>Quality Assurance</h3>
+        <p>All our products undergo strict quality checks to ensure they meet national and international standards. We source from trusted manufacturers to exceed expectations.</p>
+      </div>
+      <div class="product-right">
+        <h3>Customer-Centric Approach</h3>
+        <p>We provide personalized service, technical support, and on-time delivery to align with our clients’ specific needs and project requirements.</p>
+      </div>
+    </div>
+    <div class="product-row">
+      <div class="product-left">
+        <h3>Timely Delivery & Competitive Pricing</h3>
+        <p>We ensure fast delivery without compromising on quality, while offering competitive pricing to support project budgets.</p>
+      </div>
+      <div class="product-right">
+        <h3>Our Vision & Mission</h3>
+        <p>We aim to be the most trusted supplier of piping solutions in Kerala and continuously evolve to meet the needs of the construction sector.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+
+ <section id="map" data-aos="fade-up">
+  <h2 style="text-align: center;">Our Location</h2>
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.595986649233!2d76.44468347403693!3d10.747476260823303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba86a94c96f7d0f%3A0x186f2166df61df4f!2sHFCP%2B3CW%2C%20Kundukadu%20-%20Kunnamkadu%20Rd%2C%20Kizhakkencheri-I%2C%20Kizhakkancherry%2C%20Kerala%20678684!5e0!3m2!1sen!2sin!4v1718797370357!5m2!1sen!2sin" 
+    width="100%" 
+    height="450" 
+    style="border:0; border-radius: 8px;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</section>
+
+<section id="contact" data-aos="fade-up">
+  <h2>Contact Us</h2>
+  <form action="https://formsubmit.co/hydrotechengineeringsolutions@gmail.com" method="POST">
+    <input type="hidden" name="_captcha" value="false" />
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+    
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+    
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+
+  <div class="whatsapp-float">
+    <a href="https://wa.me/+918547898950" target="_blank">
+      <img src="whatsapp.png" alt="Chat on WhatsApp" />
+    </a>
+  </div>
+
+  <footer data-aos="fade-in">
+    <p>&copy; 2025 Hydrotech Engineering Solutions</p>
+  </footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+  let slideIndex = 0;
+  const slider = document.getElementById("slider");
+  const slides = slider.children;
+  function moveSlide(n) {
+    slideIndex += n;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+  }
+</script>
+
+</body>
+</html>
